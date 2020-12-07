@@ -1,0 +1,35 @@
+﻿@model List<Manufactory>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<a asp-controller="Home" asp-action="create" class="btn btn-primary mb-2">Create</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#Id</th>
+            <th>Manufactory Name</th>
+            <th>Actions</th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.ManufactoryId
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    <div>
+                        <a asp-controller="Home" asp-action="Update" class="btn btn-primary ">Update</a>
+                        <a asp-controller="Home" asp-action="Delete" class="btn btn-danger">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
